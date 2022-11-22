@@ -1,0 +1,26 @@
+<h1> Restaurants info page </h1>
+
+<%= link_to "new" , new_restaurant_path %>
+
+
+<table>
+
+<tr><th> Name  </th>
+<th> Address  </th>
+<th>  Action </th>
+<th>  Action </th>
+<th>  Action </th></tr>
+
+<tr> <% @restaurants.each do |restaurant| %>
+<td> <%= restaurant.name %> </td>
+     <td> <%= restaurant.place %> </td> 
+     <td> <%= link_to "edit" , edit_restaurant_path(restaurant) %> </td>
+      <td> <%= link_to "show" , restaurant %> </td>
+      <td> <%= button_to 'delete' , restaurant ,method: :delete %> </td>
+     </tr>
+      <% end %>
+
+
+</table>
+
+ 
