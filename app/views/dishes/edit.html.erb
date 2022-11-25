@@ -1,0 +1,12 @@
+<h2>    Dish Edit </h2>
+
+<%= form_with model: @dish do |form| %>
+
+<%= form.label :Dishname  %> <br>
+<%= form.text_field :name %><br>
+
+<%= form.label :Dish_Price %> <br>
+<%= form.text_field :price %><br>
+
+<%= form.submit %>
+<% end %>

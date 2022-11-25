@@ -3,3 +3,20 @@
 
 <p> <strong> Restaurant Name :</strong> <%= @restaurant.name %> </p>
 <p> <strong> Restaurant Address :</strong> <%= @restaurant.place %> </p>
+
+<p> <%= link_to "edit The Restaurant " , edit_restaurant_path(@restaurant) %>
+<p> <%= link_to "Delete The Restaurant " , @restaurant , method: :delete %>
+
+
+  <% @restaurant.dishes.each do |dish| %>
+
+<p> <%= link_to dish.name , dish_path(dish) %> </p>
+
+<% end %>
+
+<%# <%= link_to "dish" , dish_path %> 
+ <%# <%= render "dish" %>  
+ <%# <%= render "reviews" %> 
+
+
+<%# <%= render 'createdish' %> 

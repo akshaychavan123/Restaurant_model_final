@@ -1,0 +1,43 @@
+<h1> dishs info page </h1>
+
+<%= link_to "create" ,  new_dish_path %>
+
+
+<table>
+
+<tr><th> Name  </th>
+<th> price  </th>
+<th> Restaurant_id  </th>
+<th>  Action </th>
+<th>  Action </th>
+<th>  Action </th></tr>
+
+<tr> <% @dishes.each do |dish| %>
+<td> <%= dish.name %> </td>
+     <td> <%= dish.price %> </td>
+     <td> <%= dish.restaurant_id %> </td>
+     
+     <td> <%= link_to "edit" , edit_dish_path(dish) %> </td>
+      <td> <%= link_to "show" , dish %> </td>
+      <td> <%= button_to 'delete' , dish ,method: :delete %> </td>
+     </tr>
+      <% end %>
+
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
