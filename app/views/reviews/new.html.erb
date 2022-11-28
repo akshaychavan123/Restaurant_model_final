@@ -1,0 +1,13 @@
+<h2>     New Reviews </h2>
+
+<%= form_with model: @review do |form| %>
+
+<%= form.label :Comment   %> <br>
+<%= form.text_field :comment %><br>
+
+<%= form.label :Rating %> <br>
+<%= form.text_field :rating %><br>
+<p>Restaurant: <%= form.select :restaurant_id, Restaurant.all.map { |restaurant| [ restaurant.name,restaurant.id ] } %></p>
+
+<%= form.submit %>
+<% end %>

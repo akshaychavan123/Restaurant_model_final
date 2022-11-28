@@ -1,0 +1,43 @@
+<h1> All Reviews </h1>
+
+<%= link_to "create" ,  new_review_path %>
+
+
+<table>
+
+<tr><th> review  </th>
+<th> comments  </th>
+<th> Restaurant_id  </th>
+<th>  Action </th>
+<th>  Action </th>
+<th>  Action </th></tr>
+
+<tr> <% @reviews.each do |review| %>
+<td> <%= review.comment %> </td>
+     <td> <%= review.rating %> </td>
+     <td> <%= review.restaurant_id %> </td>
+     
+     <td> <%= link_to "edit" , edit_review_path(review) %> </td>
+      <td> <%= link_to "show" , review %> </td>
+      <td> <%= button_to 'delete' , review ,method: :delete %> </td>
+     </tr>
+      <% end %>
+
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
