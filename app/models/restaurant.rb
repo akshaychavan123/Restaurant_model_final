@@ -1,4 +1,5 @@
 class Restaurant < ApplicationRecord
+    paginates_per 1
     has_many :dishes
     has_many :reviews
     

@@ -1,7 +1,9 @@
 class RestaurantsController < ApplicationController
-  before action :set_restaurant , only: [:edit, :update, :show, :destory]
+  before_action :set_restaurant , only: [:edit, :update, :show, :destory]
   def index
-    @restaurants = Restaurant.all
+    @q = Restaurant.ransack(params[:q])
+    @restaurants = @q.result(distinct: true).page(params[:page])
+    # @restaurants = Restaurant.all.page(params[:page])
   end
 
   def new
