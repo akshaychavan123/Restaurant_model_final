@@ -1,5 +1,6 @@
 class RestaurantsController < ApplicationController
   before_action :set_restaurant , only: [:edit, :update, :show, :destory]
+  before_action :authenticate_user!  , except: [:index , :show]
   def index
     @q = Restaurant.ransack(params[:q])
     @restaurants = @q.result(distinct: true).page(params[:page])
