@@ -9,17 +9,17 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
-        
-        <li class="nav-item">
-        <a class="nav-link" href=<%= new_user_session_path %>>Sign In</a>
-      </li>
+        <% if user_signed_in? %>
+              <%=  link_to "signout " , destroy_user_session_path , :method => :delete %>
+        <% else %>
+              <li class="nav-item">
+                 <a class="nav-link" href=<%= new_user_session_path %>>Sign In</a>
+              </li>
+        <% end %>
 
         <li class="nav-item">
           <a class="nav-link" href=<%= new_user_registration_path %>>Sign Up</a>
        </li>
-       <li >
-      <%=  link_to "signout " , cancel_user_registration_path , method: :delete %>
-    </li>
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
           </a>

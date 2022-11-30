@@ -1,2 +1,12 @@
- vijay
- 
+added bootstrap in existing application using 
+
+bundle add cssbundling-rails
+rails css:install:bootstrap
+
+
+done with sign_out : check devise.rb 
+replace 
+
+config.sign_out_via = :delete
+with
+config.sign_out_via = :get
