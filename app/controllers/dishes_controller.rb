@@ -31,9 +31,10 @@ class DishesController < ApplicationController
 
   def destroy
     @dish.destroy
+    redirect_to dishes_path
   end
   def dish_params
-    params.require(:dish).permit(:name , :price , :restaurant_id)
+    params.require(:dish).permit(:menu , :price , :restaurant_id  , restaurant.name) 
   end
   def set_dish
     @dish = Dish.find(params[:id])

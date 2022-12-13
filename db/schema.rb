@@ -11,19 +11,13 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2022_11_29_125110) do
-  create_table "books", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "dishes", force: :cascade do |t|
-    t.string "name"
-    t.integer "price"
-    t.integer "restaurant_id"
-    t.string "restaurant_name"
+    t.string "menu"
+    t.string "price"
+    t.integer "restaurant_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["restaurant_id"], name: "index_dishes_on_restaurant_id"
   end
 
   create_table "restaurants", force: :cascade do |t|
@@ -35,9 +29,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_125110) do
 
   create_table "reviews", force: :cascade do |t|
     t.string "comment"
-    t.decimal "rating"
-    t.integer "restaurant_id"
-    t.string "restaurant_name"
+    t.integer "rating"
+    t.integer "reviewable_id"
+    t.string "reviewable_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -54,4 +48,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_125110) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "dishes", "restaurants"
 end

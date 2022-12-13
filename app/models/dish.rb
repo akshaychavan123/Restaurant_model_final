@@ -1,3 +1,5 @@
 class Dish < ApplicationRecord
     belongs_to :restaurant
-end
+    has_many :reviews , as: :reviewable
+  end
+  

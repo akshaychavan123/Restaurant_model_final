@@ -3,10 +3,16 @@
 <%= form_with model: @dish do |form| %>
 
 <%= form.label :Dishname  %> <br>
-<%= form.text_field :name %><br>
+<%= form.text_field :menu %><br>
 
 <%= form.label :Dish_Price %> <br>
 <%= form.text_field :price %><br>
 
+ <p>Restaurant: <%= form.select :restaurant_id, Restaurant.all.map { |restaurant| [ restaurant.name,restaurant.id ] } %></p>
+
+
 <%= form.submit %>
 <% end %>
+
+<br>
+<%= link_to "Back" , dishes_path , class:"btn btn-secondary btn-sm" %>

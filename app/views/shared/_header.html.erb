@@ -10,7 +10,10 @@
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <% if user_signed_in? %>
-              <%=  link_to "signout " , destroy_user_session_path , :method => :delete %>
+              <li class="nav-item">
+          <%=  link_to "signout " , destroy_user_session_path , :method => :delete %>
+       </li>
+              
         <% else %>
               <li class="nav-item">
                  <a class="nav-link" href=<%= new_user_session_path %>>Sign In</a>

@@ -1,13 +1,31 @@
 <h1> Dish </h1>
 
 
-<p> <strong> Dish Name :</strong> <%= @dish.name %> </p>
+<p> <strong> Dish Name :</strong> <%= @dish.menu %> </p>
 <p> <strong> Dish Price :</strong> <%= @dish.price %> </p>
 <p> <strong> Restaurant Id :</strong> <%= @dish.restaurant_id %> </p>
 
-<%= link_to "Back to All Dishes" , dishes_path %>
+<br>
+<%= link_to "Back" , dishes_path , class:"btn btn-secondary btn-sm" %>
+<%= button_to 'delete' , @dish ,method: :delete ,class:"btn btn-outline-danger btn-sm" %>
 
- 
 
+  <h1> Reviews </h1>
+  <table  class="table table-dark table-hover">
+    <thead>
+      <tr>
+        <th> Comment</th>
+        <th>Rating</th>
+      </tr>
+    </thead>
+    <% @dish.reviews.each do |review| %>
+    <tbody>
+      <tr>
+        <td> <%= review.comment %></td>
+        <td><%= review.rating %></td>
+        </tr>
+      </tbody>
+      <% end %>
+  </table>
 
 

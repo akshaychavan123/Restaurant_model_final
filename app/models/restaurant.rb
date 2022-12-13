@@ -1,19 +1,19 @@
 class Restaurant < ApplicationRecord
-    paginates_per 1
     has_many :dishes
-    has_many :reviews
+    has_many :reviews , as: :reviewable
+
     
-
-    # just for study purpose
-    # def greeting
-    #      "hello akshay #{name} here we go"
-    # end 
-    def showreview
-        self.reviews
-    end
-    def showdish
-        self.dishes
+    def showdishes
+        self.dishes.each do |dish|
+            dish.menu 
+            dish.price
+        end
     end
 
+
+    paginates_per 5
 
 end
+
+    
+   

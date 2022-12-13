@@ -33,7 +33,7 @@ class ReviewsController < ApplicationController
     @review.destroy
   end
   def review_params
-    params.require(:review).permit(:comment, :rating, :restaurant_id)
+    params.require(:review).permit(:comment, :rating, :reviewable_id )
   end
   def set_review
     @review = Review.find(params[:id])
