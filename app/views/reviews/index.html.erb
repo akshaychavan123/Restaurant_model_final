@@ -7,7 +7,7 @@
       <tr>
         <th>Comment</th>
         <th>Rating</th>
-        <th> ID </th>
+        <%# <th> ID </th> %>
         <th>Action</th>
         <th>Action</th>
         <th>Action</th>
@@ -18,7 +18,7 @@
       <tr>
         <td><%= review.comment %></td>
         <td><%= review.rating %></td>
-        <td><%= review.reviewable_id %></td>
+        
         <td><%= link_to "show" , review ,class:"btn btn-primary" %></td>
         <td><%= link_to "edit" , edit_review_path(review), class:"btn btn-warning" %></td>
         <td><%= button_to 'delete' , review ,method: :delete ,class:"btn btn-danger" %></td>

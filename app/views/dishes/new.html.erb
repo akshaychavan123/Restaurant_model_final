@@ -9,7 +9,7 @@
 <%= form.text_field :price %><br>
 
 
- <p>Restaurant: <%= form.select :restaurant.name, Restaurant.all.map { |restaurant| [ restaurant.name,restaurant.id ] } %></p>
+ <p>Restaurant: <%= form.select :restaurant_id, Restaurant.all.map { |restaurant| [ restaurant.name,restaurant.id ] } %></p>
 
 <%= form.submit %>
 <% end %>

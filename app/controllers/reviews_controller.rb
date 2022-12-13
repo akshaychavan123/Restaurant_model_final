@@ -11,6 +11,7 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     if @review.save 
+      debugger
       redirect_to reviews_path
     else
       render :show

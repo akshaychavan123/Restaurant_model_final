@@ -9,8 +9,6 @@ class Restaurant < ApplicationRecord
             dish.price
         end
     end
-
-
     paginates_per 5
 
 end

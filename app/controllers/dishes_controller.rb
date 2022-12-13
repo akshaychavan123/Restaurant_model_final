@@ -34,7 +34,7 @@ class DishesController < ApplicationController
     redirect_to dishes_path
   end
   def dish_params
-    params.require(:dish).permit(:menu , :price , :restaurant_id  , restaurant.name) 
+    params.require(:dish).permit(:menu , :price , :restaurant_id  ) 
   end
   def set_dish
     @dish = Dish.find(params[:id])

@@ -7,7 +7,7 @@
       <tr>
         <th>Dishname</th>
         <th>Price</th>
-        <th>Action</th>
+        <%# <th>Action</th> %>
         <th>Action</th>
         <th>Action</th>
         <th>Action</th>
@@ -18,7 +18,7 @@
       <tr>
         <td><%= dish.menu %></td>
         <td><%= dish.price %> </td>
-        <td><%= dish.restaurant.name %></td>
+        <%# <td><%= dish.restaurant_id %></td>  
         <td><%= link_to "edit" , edit_dish_path(dish),class:"btn btn-warning"  %></td>
         <td><%= link_to "show" , dish ,class:"btn btn-primary" %></td>
         <td><%= button_to 'delete' , dish ,method: :delete ,class:"btn btn-danger" %></td>
