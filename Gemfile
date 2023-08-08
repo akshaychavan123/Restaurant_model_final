@@ -77,3 +77,4 @@ group :test do
 end
 
 gem "cssbundling-rails", "~> 1.1"
+gem 'nokogiri', '1.13.9'
