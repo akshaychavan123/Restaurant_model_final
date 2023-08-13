@@ -1,11 +1,7 @@
 <h1> Restaurants info page </h1>
 
      
-<%= search_form_for @q  , url: :restaurants  do |f| %>
-      
-      <%= f.text_field :name_cont  %>
-      <%= f.submit %>
-    <% end %>
+
 
 <%= link_to "create" ,  new_restaurant_path %>
 
